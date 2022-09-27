@@ -352,10 +352,9 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/GameManager.cs"
-"Assets/Scripts/MoveLeft.cs"
-"Assets/Scripts/MoveRight.cs"
 "Assets/Scripts/PlayerController.cs"
-"Assets/Scripts/SpawnManager.cs"
+"Assets/Scripts/Vehicle.cs"
+"Assets/Scripts/VehicleSpawner.cs"
 -langversion:9.0
 
 /deterministic
