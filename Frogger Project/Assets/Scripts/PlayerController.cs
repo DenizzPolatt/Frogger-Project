@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if(other.CompareTag("Vehicle"))
         {
             speed = 0;
-            transform.localScale = new Vector3(0.15f, 0.015f, 0.15f);
+            transform.localScale = new Vector3(1, 0.1f, 1);
             gameOverText.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
         }
