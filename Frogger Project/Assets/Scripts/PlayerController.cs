@@ -4,23 +4,39 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private float horizontalInput;
     private float forwardInput;
+    private float tWait = 5.0f;
+    private float tActive;
     
     public float speed;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI winningText;
     public Button restartButton;
-    
 
-    
+    [SerializeField] private GameObject[] models;
+
+    private void Start()
+    {
+        int index = PlayerPrefs.GetInt("PlayerIndex");
+        models[index].SetActive(true);
+    }
+
     // Update is called once per frame
     private void Update()
     {
+        tActive += Time.deltaTime;
+        if (tActive < tWait)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            return;
+        }
+
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
         
@@ -51,13 +67,13 @@ public class PlayerController : MonoBehaviour
         
         WinTheGame();
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Vehicle"))
         {
             speed = 0;
-            transform.localScale = new Vector3(1, 0.1f, 1);
+            transform.localScale = new Vector3(2, 0.05f, 1);
             gameOverText.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
         }
@@ -72,6 +88,4 @@ public class PlayerController : MonoBehaviour
             restartButton.gameObject.SetActive(true);
         }
     }
-
-    
 }

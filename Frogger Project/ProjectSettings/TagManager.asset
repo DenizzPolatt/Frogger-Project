@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Vehicle
   - Opposite
+  - Penguin
+  - Sheep
+  - Duck
+  - Mole
+  - Cat
   layers:
   - Default
   - TransparentFX

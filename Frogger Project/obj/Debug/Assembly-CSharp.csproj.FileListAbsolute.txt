@@ -1,0 +1,2 @@
+/Users/deniz/Desktop/frogger/3DFroggerProject/Frogger Project/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+/Users/deniz/Desktop/frogger/3DFroggerProject/Frogger Project/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
